@@ -185,7 +185,7 @@ export const translations = {
             "Real-time chat application with conversation management and instant messaging features.",
           tech: ["TypeScript", "React", "Node.js", "SCSS"],
           github: "https://github.com/DaniRico987/sagittarius",
-          live: "#https://sagittarius-omega.vercel.app/",
+          live: "https://sagittarius-omega.vercel.app/",
         },
         {
           title: "Product Management App",
