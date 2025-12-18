@@ -174,7 +174,7 @@ export const translations = {
         {
           title: "PaintTrack",
           description:
-            "Web application for tracking painting projects. Features project management and progress tracking.",
+            "Web application for tracking painting projects. Demo Credentials: User: adminMaster | Pass: admin123",
           tech: ["TypeScript", "React", "Vite"],
           github: "https://github.com/DaniRico987/painttrack",
           live: "https://painttrack-eight.vercel.app/",
@@ -287,7 +287,7 @@ export const translations = {
         {
           title: "PaintTrack",
           description:
-            "Aplicación web para seguimiento de proyectos de pintura. Cuenta con gestión de proyectos y seguimiento de progreso.",
+            "Aplicación web para seguimiento de proyectos de pintura. Credenciales Demo: Usuario: adminMaster | Clave: admin123",
           tech: ["TypeScript", "React", "Vite"],
           github: "https://github.com/DaniRico987/painttrack",
           live: "https://painttrack-eight.vercel.app/",
