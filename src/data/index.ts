@@ -298,7 +298,7 @@ export const translations = {
             "Aplicación de chat en tiempo real con gestión de conversaciones y mensajería instantánea.",
           tech: ["TypeScript", "React", "Node.js", "SCSS"],
           github: "https://github.com/DaniRico987/sagittarius",
-          live: "#",
+          live: "https://sagittarius-omega.vercel.app/",
         },
         {
           title: "App de Gestión de Productos",
