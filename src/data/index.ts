@@ -118,7 +118,7 @@ export const translations = {
     about: {
       title: "About Me",
       description: [
-        "My journey began with a high school passion project: attempting to build a video game. Getting lost in tutorials and lines of code, I realized I loved the process of creation and how fast time flew when I was programming. That spark led me to pursue Systems Engineering, where I found my true calling.",
+        "My journey began with a high school passion project: attempting to build a video game. Getting lost in tutorials and lines of code, I realized I loved the process of creation and how fast time flew when I was programming. That spark led me to pursue Systems and Computing Engineering, where I found my true calling.",
         "I pride myself on being a perfectionist with a plan. I don't just write code; I architect solutions. My experience has taught me that meticulous planning prevents poor performance. I believe software is a team sport—clean code and clear documentation are my standards because 'it works on my machine' isn't good enough for enterprise-grade applications.",
         "Looking ahead, I'm steering my career toward the intersection of AI, App Development, and Neuromarketing. When I'm away from the keyboard, you'll find me trying to master the art of cooking or clearing my mind on a long walk.",
       ],
@@ -150,6 +150,13 @@ export const translations = {
     education: {
       title: "Education",
       data: [
+        {
+          school: "Universidad Tecnológica de Pereira",
+          degree: "Systems and Computing Engineering",
+          period: "2022 - Present",
+          description:
+            "Currently pursuing a degree in Systems and Computing Engineering.",
+        },
         {
           school: "Universidad Tecnológica de Pereira",
           degree: "Full Stack Developer",
@@ -231,7 +238,7 @@ export const translations = {
     about: {
       title: "Sobre Mí",
       description: [
-        "Todo comenzó en el colegio con un proyecto ambicioso: crear un videojuego. Entre tutoriales y código, descubrí que disfrutaba tanto el proceso de creación que perdía la noción del tiempo. Esa chispa me llevó a estudiar Ingeniería de Sistemas, donde formalicé mi pasión.",
+        "Todo comenzó en el colegio con un proyecto ambicioso: crear un videojuego. Entre tutoriales y código, descubrí que disfrutaba tanto el proceso de creación que perdía la noción del tiempo. Esa chispa me llevó a estudiar Ingeniería en Sistemas y Computación, donde formalicé mi pasión.",
         "Me defino por mi autoaprendizaje y perfeccionismo; no avanzo hasta que el resultado es impecable. Mi experiencia me ha enseñado que una gran ejecución nace de una minuciosa planificación. Valoro profundamente la documentación y el código limpio, porque a nivel empresarial el software debe ser comprensible para todo el equipo, no solo para su autor.",
         "Miro hacia el futuro con gran interés en la IA, el desarrollo de aplicaciones y el neuromarketing. Cuando no estoy programando, me encontrarás intentando dominar nuevas recetas en la cocina o despejando la mente con una buena caminata.",
       ],
@@ -265,6 +272,13 @@ export const translations = {
       data: [
         {
           school: "Universidad Tecnológica de Pereira",
+          degree: "Ingeniería en Sistemas y Computación",
+          period: "2022 - Actualidad",
+          description:
+            "Actualmente cursando la carrera de Ingeniería en Sistemas y Computación.",
+        },
+        {
+          school: "Universidad Tecnológica de Pereira",
           degree: "Desarrollador Full Stack",
           period: "Dic 2022 - Ene 2023",
           description: "Egresado del PRIMER BOOTCAMP-UTP",
@@ -278,6 +292,7 @@ export const translations = {
         },
       ],
     },
+
     skills: {
       title: "Arsenal Técnico",
     },
