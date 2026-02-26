@@ -64,8 +64,7 @@ export function Projects() {
               className="h-[400px] perspective-1000"
             >
               <div
-                onClick={() => toggleFlip(index)}
-                className={`relative w-full h-full cursor-pointer transition-transform duration-700 transform-style-3d ${
+                className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${
                   flipped.includes(index) ? "rotate-y-180" : ""
                 }`}
                 style={{
@@ -77,7 +76,12 @@ export function Projects() {
               >
                 {/* Front Face */}
                 <div
-                  className="absolute inset-0 backface-hidden rounded-xl overflow-hidden border border-neutral-800 hover:border-blue-500/50 transition-colors"
+                  onClick={() => !flipped.includes(index) && toggleFlip(index)}
+                  className={`absolute inset-0 backface-hidden rounded-xl overflow-hidden border border-neutral-800 hover:border-blue-500/50 transition-colors ${
+                    flipped.includes(index)
+                      ? "pointer-events-none"
+                      : "cursor-pointer"
+                  }`}
                   style={{ backfaceVisibility: "hidden" }}
                 >
                   <div
@@ -93,8 +97,8 @@ export function Projects() {
                           ? index === 0
                             ? "Featured"
                             : index === 1
-                            ? "Recent"
-                            : "Production"
+                              ? "Recent"
+                              : "Production"
                           : "Project"}
                       </div>
                       <h3 className="text-3xl font-bold text-white mb-2">
@@ -123,7 +127,9 @@ export function Projects() {
 
                 {/* Back Face */}
                 <div
-                  className="absolute inset-0 backface-hidden rounded-xl overflow-hidden border border-neutral-800 bg-neutral-900"
+                  className={`absolute inset-0 backface-hidden rounded-xl overflow-hidden border border-neutral-800 bg-neutral-900 ${
+                    !flipped.includes(index) ? "pointer-events-none" : ""
+                  }`}
                   style={{
                     backfaceVisibility: "hidden",
                     transform: "rotateY(180deg)",
@@ -183,7 +189,7 @@ export function Projects() {
 
                       <button
                         onClick={() => toggleFlip(index)}
-                        className="w-full text-center text-neutral-500 hover:text-neutral-400 text-xs transition-colors py-2"
+                        className="w-full text-center text-neutral-500 hover:text-neutral-400 text-xs transition-colors py-2 cursor-pointer"
                       >
                         Click to flip back →
                       </button>
