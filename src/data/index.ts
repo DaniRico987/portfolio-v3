@@ -202,6 +202,14 @@ export const translations = {
           github: "https://github.com/DaniRico987/SpringBoot---Angular",
           live: "#",
         },
+        {
+          title: "CoffeeAura",
+          description:
+            "Project built to explore AI-assisted development by combining Lovable for design generation and Antigravity for implementation, while evaluating each step.",
+          tech: ["TypeScript", "React", "Tailwind CSS"],
+          github: "https://github.com/DaniRico987/coffeeAura",
+          live: "https://coffee-aura.vercel.app/",
+        },
       ],
     },
     contact: {
@@ -322,6 +330,14 @@ export const translations = {
           tech: ["Angular", "Spring Boot", "TypeScript", "Java"],
           github: "https://github.com/DaniRico987/SpringBoot---Angular",
           live: "#",
+        },
+        {
+          title: "CoffeeAura",
+          description:
+            "Proyecto creado con la idea de aprender qué se podía hacer al mezclar Lovable para el diseño, Antigravity para la construcción y evaluando cada paso del proceso.",
+          tech: ["TypeScript", "React", "Tailwind CSS"],
+          github: "https://github.com/DaniRico987/coffeeAura",
+          live: "https://coffee-aura.vercel.app/",
         },
       ],
     },
