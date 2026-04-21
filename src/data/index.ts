@@ -179,6 +179,12 @@ export const translations = {
       title: "Featured Projects",
       viewDetails: "Click to view details",
       flipBack: "Click to flip back",
+      code: "Code",
+      live: "Live",
+      badgeFeatured: "Featured",
+      badgeRecent: "Recent",
+      badgeProduction: "Production",
+      badgeProject: "Project",
       data: [
         {
           title: "PaintTrack",
@@ -318,6 +324,12 @@ export const translations = {
       title: "Proyectos Destacados",
       viewDetails: "Haz clic para ver detalles",
       flipBack: "Haz clic para volver",
+      code: "Código",
+      live: "En vivo",
+      badgeFeatured: "Destacado",
+      badgeRecent: "Reciente",
+      badgeProduction: "Producción",
+      badgeProject: "Proyecto",
       data: [
         {
           title: "PaintTrack",

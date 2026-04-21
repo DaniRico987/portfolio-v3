@@ -95,11 +95,11 @@ export function Projects() {
                       <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white mb-4">
                         {t.projects.data.length === 3
                           ? index === 0
-                            ? "Featured"
+                            ? t.projects.badgeFeatured
                             : index === 1
-                              ? "Recent"
-                              : "Production"
-                          : "Project"}
+                              ? t.projects.badgeRecent
+                              : t.projects.badgeProduction
+                          : t.projects.badgeProject}
                       </div>
                       <h3 className="text-3xl font-bold text-white mb-2">
                         {project.title}
@@ -171,7 +171,7 @@ export function Projects() {
                           className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 rounded-lg transition-colors text-sm font-medium"
                         >
                           <Github size={16} />
-                          Code
+                          {t.projects.code}
                         </a>
                         {project.live !== "#" && (
                           <a
@@ -182,7 +182,7 @@ export function Projects() {
                             className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors text-sm font-medium"
                           >
                             <ExternalLink size={16} />
-                            Live
+                            {t.projects.live}
                           </a>
                         )}
                       </div>
