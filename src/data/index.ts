@@ -177,6 +177,8 @@ export const translations = {
     },
     projects: {
       title: "Featured Projects",
+      viewDetails: "Click to view details",
+      flipBack: "Click to flip back",
       data: [
         {
           title: "PaintTrack",
@@ -209,6 +211,14 @@ export const translations = {
           tech: ["TypeScript", "React", "Tailwind CSS"],
           github: "https://github.com/DaniRico987/coffeeAura",
           live: "https://coffee-aura.vercel.app/",
+        },
+        {
+          title: "Pitchme",
+          description:
+            "Upload your CV, paste the job offer, and find out what to improve to boost your chances. Work in progress.",
+          tech: ["TypeScript", "React", "Tailwind CSS"],
+          github: "https://github.com/DaniRico987/pitchme",
+          live: "https://pitchme-dr.vercel.app/",
         },
       ],
     },
@@ -306,6 +316,8 @@ export const translations = {
     },
     projects: {
       title: "Proyectos Destacados",
+      viewDetails: "Haz clic para ver detalles",
+      flipBack: "Haz clic para volver",
       data: [
         {
           title: "PaintTrack",
@@ -338,6 +350,14 @@ export const translations = {
           tech: ["TypeScript", "React", "Tailwind CSS"],
           github: "https://github.com/DaniRico987/coffeeAura",
           live: "https://coffee-aura.vercel.app/",
+        },
+        {
+          title: "Pitchme",
+          description:
+            "Sube tu CV, pega la oferta y descubre qué mejorar para tener más chances. Proyecto en desarrollo continuo.",
+          tech: ["TypeScript", "React", "Tailwind CSS"],
+          github: "https://github.com/DaniRico987/pitchme",
+          live: "https://pitchme-dr.vercel.app/",
         },
       ],
     },

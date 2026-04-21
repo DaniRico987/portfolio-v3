@@ -61,7 +61,7 @@ export function Projects() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="h-[400px] perspective-1000"
+              className="h-100 perspective-1000"
             >
               <div
                 className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${
@@ -85,7 +85,7 @@ export function Projects() {
                   style={{ backfaceVisibility: "hidden" }}
                 >
                   <div
-                    className={`h-full bg-gradient-to-br ${
+                    className={`h-full bg-linear-to-br ${
                       gradients[index % gradients.length]
                     } p-8 flex flex-col justify-between relative overflow-hidden`}
                   >
@@ -119,7 +119,7 @@ export function Projects() {
                       </div>
 
                       <div className="text-white/80 text-sm">
-                        Click to view details →
+                        {t.projects.viewDetails} →
                       </div>
                     </div>
                   </div>
@@ -191,7 +191,7 @@ export function Projects() {
                         onClick={() => toggleFlip(index)}
                         className="w-full text-center text-neutral-500 hover:text-neutral-400 text-xs transition-colors py-2 cursor-pointer"
                       >
-                        Click to flip back →
+                        {t.projects.flipBack} →
                       </button>
                     </div>
                   </div>
