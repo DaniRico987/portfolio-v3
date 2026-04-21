@@ -3,6 +3,7 @@ import { Github, ExternalLink } from "lucide-react";
 import { Section } from "../ui/Section";
 import { useLanguage } from "../../context/LanguageContext";
 import { useState } from "react";
+import type { ProjectStatus } from "../../data";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -33,6 +34,24 @@ export function Projects() {
   const { t } = useLanguage();
   const [flipped, setFlipped] = useState<number[]>([]);
 
+  const statusLabels = {
+    featured: t.projects.badgeFeatured,
+    recent: t.projects.badgeRecent,
+    production: t.projects.badgeProduction,
+    project: t.projects.badgeProject,
+  } as const;
+
+  const statusPriority: Record<ProjectStatus, number> = {
+    featured: 0,
+    recent: 1,
+    production: 2,
+    project: 3,
+  };
+
+  const sortedProjects = [...t.projects.data].sort((a, b) => {
+    return statusPriority[a.status] - statusPriority[b.status];
+  });
+
   const toggleFlip = (index: number) => {
     if (flipped.includes(index)) {
       setFlipped(flipped.filter((i) => i !== index));
@@ -57,7 +76,7 @@ export function Projects() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {t.projects.data.map((project, index) => (
+          {sortedProjects.map((project, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -93,13 +112,7 @@ export function Projects() {
 
                     <div className="relative z-10">
                       <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white mb-4">
-                        {t.projects.data.length === 3
-                          ? index === 0
-                            ? t.projects.badgeFeatured
-                            : index === 1
-                              ? t.projects.badgeRecent
-                              : t.projects.badgeProduction
-                          : t.projects.badgeProject}
+                        {statusLabels[project.status]}
                       </div>
                       <h3 className="text-3xl font-bold text-white mb-2">
                         {project.title}

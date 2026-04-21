@@ -30,6 +30,23 @@ import {
 import { FaServer, FaPencilRuler } from "react-icons/fa";
 import { IoLogoGitlab } from "react-icons/io5";
 
+export type ProjectStatus =
+  | "featured"
+  | "recent"
+  | "production"
+  | "project";
+
+interface ProjectItem {
+  title: string;
+  status: ProjectStatus;
+  description: string;
+  tech: string[];
+  github: string;
+  live: string;
+}
+
+const defineProjects = <T extends ProjectItem[]>(projects: T) => projects;
+
 export const SOCIAL_LINKS = [
   {
     label: "GitHub",
@@ -185,9 +202,10 @@ export const translations = {
       badgeRecent: "Recent",
       badgeProduction: "Production",
       badgeProject: "Project",
-      data: [
+      data: defineProjects([
         {
           title: "PaintTrack",
+          status: "production",
           description:
             "Web application for tracking painting projects. Demo Credentials: User: adminMaster | Pass: admin123",
           tech: ["TypeScript", "React", "Vite"],
@@ -196,6 +214,7 @@ export const translations = {
         },
         {
           title: "Sagittarius",
+          status: "production",
           description:
             "Real-time chat application with conversation management and instant messaging features.",
           tech: ["TypeScript", "React", "Node.js", "SCSS"],
@@ -204,6 +223,7 @@ export const translations = {
         },
         {
           title: "Product Management App",
+          status: "project",
           description:
             "Full-stack application for product management developed with Spring Boot (Backend) and Angular (Frontend).",
           tech: ["Angular", "Spring Boot", "TypeScript", "Java"],
@@ -212,6 +232,7 @@ export const translations = {
         },
         {
           title: "CoffeeAura",
+          status: "project",
           description:
             "Project built to explore AI-assisted development by combining Lovable for design generation and Antigravity for implementation, while evaluating each step.",
           tech: ["TypeScript", "React", "Tailwind CSS"],
@@ -220,13 +241,14 @@ export const translations = {
         },
         {
           title: "Pitchme",
+          status: "recent",
           description:
             "Upload your CV, paste the job offer, and find out what to improve to boost your chances. Work in progress.",
           tech: ["TypeScript", "React", "Tailwind CSS"],
           github: "https://github.com/DaniRico987/pitchme",
           live: "https://pitchme-dr.vercel.app/",
         },
-      ],
+      ]),
     },
     contact: {
       subtitle: "04. What's Next?",
@@ -330,9 +352,10 @@ export const translations = {
       badgeRecent: "Reciente",
       badgeProduction: "Producción",
       badgeProject: "Proyecto",
-      data: [
+      data: defineProjects([
         {
           title: "PaintTrack",
+          status: "production",
           description:
             "Aplicación web para seguimiento de proyectos de pintura. Credenciales Demo: Usuario: adminMaster | Clave: admin123",
           tech: ["TypeScript", "React", "Vite"],
@@ -341,6 +364,7 @@ export const translations = {
         },
         {
           title: "Sagittarius",
+          status: "production",
           description:
             "Aplicación de chat en tiempo real con gestión de conversaciones y mensajería instantánea.",
           tech: ["TypeScript", "React", "Node.js", "SCSS"],
@@ -349,14 +373,16 @@ export const translations = {
         },
         {
           title: "App de Gestión de Productos",
+          status: "project",
           description:
             "Aplicación full-stack para gestión de productos desarrollada con Spring Boot (Backend) y Angular (Frontend).",
           tech: ["Angular", "Spring Boot", "TypeScript", "Java"],
           github: "https://github.com/DaniRico987/SpringBoot---Angular",
-          live: "#",
+          live: "#"
         },
         {
           title: "CoffeeAura",
+          status: "project",
           description:
             "Proyecto creado con la idea de aprender qué se podía hacer al mezclar Lovable para el diseño, Antigravity para la construcción y evaluando cada paso del proceso.",
           tech: ["TypeScript", "React", "Tailwind CSS"],
@@ -365,13 +391,14 @@ export const translations = {
         },
         {
           title: "Pitchme",
+          status: "recent",
           description:
             "Sube tu CV, pega la oferta y descubre qué mejorar para tener más chances. Proyecto en desarrollo continuo.",
           tech: ["TypeScript", "React", "Tailwind CSS"],
           github: "https://github.com/DaniRico987/pitchme",
           live: "https://pitchme-dr.vercel.app/",
         },
-      ],
+      ]),
     },
     contact: {
       subtitle: "04. ¿Qué sigue?",
