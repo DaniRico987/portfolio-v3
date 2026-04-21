@@ -7,8 +7,8 @@ const ALL_SKILLS = SKILLS_DATA.flatMap((category) => category.items);
 export function TechMarquee() {
   return (
     <div className="py-10 bg-neutral-950 border-y border-neutral-900 overflow-hidden relative z-10 w-full">
-      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-neutral-950 to-transparent z-20 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-neutral-950 to-transparent z-20 pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-32 bg-linear-to-r from-neutral-950 to-transparent z-20 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-32 bg-linear-to-l from-neutral-950 to-transparent z-20 pointer-events-none" />
 
       <motion.div
         className="flex gap-16 w-max"

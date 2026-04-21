@@ -31,8 +31,8 @@ export function Experience() {
               transition={{ delay: index * 0.1 }}
               className="relative md:pl-8"
             >
-              <div className="absolute -left-[33px] top-2 w-4 h-4 rounded-full bg-blue-500 border-4 border-neutral-950 block md:hidden" />
-              <div className="hidden md:block absolute -left-[5px] top-2 w-3 h-3 rounded-full bg-blue-500" />
+              <div className="absolute -left-8.25 top-2 w-4 h-4 rounded-full bg-blue-500 border-4 border-neutral-950 block md:hidden" />
+              <div className="hidden md:block absolute -left-1.25 top-2 w-3 h-3 rounded-full bg-blue-500" />
 
               <h3 className="text-xl font-bold text-neutral-100">
                 {job.role}{" "}

@@ -1,4 +1,10 @@
-import { createContext, useContext, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
 import { translations, type Language, type Translation } from "../data";
 
 interface LanguageContextType {
@@ -11,8 +17,23 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
 );
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("en");
+interface LanguageProviderProps {
+  children: ReactNode;
+  initialLang: "es" | "en";
+}
+
+export function LanguageProvider({ children, initialLang }: LanguageProviderProps) {
+  const [language, setLanguage] = useState<Language>(initialLang);
+
+  useEffect(() => {
+    setLanguage(initialLang);
+  }, [initialLang]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("language", language);
+    }
+  }, [language]);
 
   const value = {
     language,

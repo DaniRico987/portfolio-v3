@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import { cn } from "../../utils/cn";
 import { useLanguage } from "../../context/LanguageContext";
 
 export function Navbar() {
-  const { t, language, setLanguage } = useLanguage();
+  const { t, language } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -87,13 +88,27 @@ export function Navbar() {
           ))}
 
           {/* Language Toggle */}
-          <button
-            onClick={() => setLanguage(language === "en" ? "es" : "en")}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-800/50 hover:bg-neutral-800 text-neutral-300 hover:text-white transition-colors text-xs font-medium border border-white/5"
-          >
+          <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-neutral-800/50 hover:bg-neutral-800 text-neutral-300 transition-colors text-xs font-medium border border-white/5">
             <Globe size={14} />
-            {language.toUpperCase()}
-          </button>
+            <Link
+              to="/es"
+              className={cn(
+                "px-1.5 py-0.5 rounded transition-colors",
+                language === "es" ? "text-white bg-white/10" : "hover:text-white"
+              )}
+            >
+              ES
+            </Link>
+            <Link
+              to="/en"
+              className={cn(
+                "px-1.5 py-0.5 rounded transition-colors",
+                language === "en" ? "text-white bg-white/10" : "hover:text-white"
+              )}
+            >
+              EN
+            </Link>
+          </div>
 
           <a
             href="/resume.pdf"
@@ -107,13 +122,27 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <div className="flex items-center gap-4 md:hidden">
-          <button
-            onClick={() => setLanguage(language === "en" ? "es" : "en")}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-neutral-800/50 text-neutral-300 text-xs font-medium border border-white/5"
-          >
+          <div className="flex items-center gap-1 px-2 py-1 rounded-full bg-neutral-800/50 text-neutral-300 text-xs font-medium border border-white/5">
             <Globe size={14} />
-            {language.toUpperCase()}
-          </button>
+            <Link
+              to="/es"
+              className={cn(
+                "px-1.5 py-0.5 rounded transition-colors",
+                language === "es" ? "text-white bg-white/10" : "hover:text-white"
+              )}
+            >
+              ES
+            </Link>
+            <Link
+              to="/en"
+              className={cn(
+                "px-1.5 py-0.5 rounded transition-colors",
+                language === "en" ? "text-white bg-white/10" : "hover:text-white"
+              )}
+            >
+              EN
+            </Link>
+          </div>
 
           <button
             className="text-neutral-400 hover:text-white"
