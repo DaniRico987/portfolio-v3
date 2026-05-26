@@ -243,7 +243,7 @@ export const translations = {
           title: "Eolia",
           status: "recent",
           description:
-            "Scheduler and concurrency simulator built for an Operating Systems course. Implements scheduling algorithms (FIFO, Round Robin, SJF, priority), metrics and a React + TypeScript UI, with a Python backend — adapted to model a real-world farm environment.",
+            "Concurrency and scheduling simulator for an Operating Systems course. Includes FIFO, Round Robin, SJF and priority scheduling, metrics, and a React + TypeScript UI with a Python backend.",
           tech: ["Python", "TypeScript", "React", "Vite"],
           github: "https://github.com/DaniRico987/eolia",
           live: "#",
@@ -402,7 +402,7 @@ export const translations = {
           title: "Eolia",
           status: "recent",
           description:
-            "Simulador de planificación y concurrencia desarrollado para la materia de Sistemas Operativos. Implementa algoritmos de planificación (FIFO, Round Robin, SJF, prioridad), utilidades de concurrencia, cálculo de métricas y una UI en React + TypeScript, con backend en Python — adaptado para modelar un entorno real como una granja.",
+            "Simulador de planificación y concurrencia para Sistemas Operativos. Incluye FIFO, Round Robin, SJF y prioridad, métricas y UI en React + TypeScript con backend en Python.",
           tech: ["Python", "TypeScript", "React", "Vite"],
           github: "https://github.com/DaniRico987/eolia",
           live: "#",
