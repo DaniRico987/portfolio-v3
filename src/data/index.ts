@@ -240,6 +240,15 @@ export const translations = {
           live: "https://coffee-aura.vercel.app/",
         },
         {
+          title: "Eolia",
+          status: "recent",
+          description:
+            "Scheduler and concurrency simulator built for an Operating Systems course. Implements scheduling algorithms (FIFO, Round Robin, SJF, priority), metrics and a React + TypeScript UI, with a Python backend — adapted to model a real-world farm environment.",
+          tech: ["Python", "TypeScript", "React", "Vite"],
+          github: "https://github.com/DaniRico987/eolia",
+          live: "#",
+        },
+        {
           title: "Pitchme",
           status: "recent",
           description:
@@ -388,6 +397,15 @@ export const translations = {
           tech: ["TypeScript", "React", "Tailwind CSS"],
           github: "https://github.com/DaniRico987/coffeeAura",
           live: "https://coffee-aura.vercel.app/",
+        },
+        {
+          title: "Eolia",
+          status: "recent",
+          description:
+            "Simulador de planificación y concurrencia desarrollado para la materia de Sistemas Operativos. Implementa algoritmos de planificación (FIFO, Round Robin, SJF, prioridad), utilidades de concurrencia, cálculo de métricas y una UI en React + TypeScript, con backend en Python — adaptado para modelar un entorno real como una granja.",
+          tech: ["Python", "TypeScript", "React", "Vite"],
+          github: "https://github.com/DaniRico987/eolia",
+          live: "#",
         },
         {
           title: "Pitchme",
