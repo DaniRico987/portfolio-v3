@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
 
 export function Contact() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <Section id="contact" centered className="py-32">
@@ -31,6 +31,12 @@ export function Contact() {
         >
           {t.contact.cta}
         </a>
+
+        <p className="mt-6 text-sm text-neutral-500">
+          {language === "es"
+            ? "Respuesta directa por correo."
+            : "Direct reply by email."}
+        </p>
       </motion.div>
     </Section>
   );

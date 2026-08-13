@@ -1,9 +1,9 @@
 // TODO: Crear favicon-192.png y favicon-512.png en /public
 // Herramienta sugerida: https://realfavicongenerator.net
 {
-  "name": "Daniel Rico Palacio | Frontend Developer",
+  "name": "Daniel Rico Palacio | Software Developer",
   "short_name": "Daniel Rico",
-  "description": "Desarrollador Frontend · React & TypeScript · Colombia",
+  "description": "Desarrollador de Software · Arquitectura · Liderazgo Técnico · Colombia",
   "start_url": "/es",
   "display": "standalone",
   "background_color": "#0a0a0a",

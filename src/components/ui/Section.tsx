@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import { cn } from "../../utils/cn"; // I'll need to create this utility or just inline it if simple
+import { cn } from "../../utils/cn";
 
 interface SectionProps {
   id: string;

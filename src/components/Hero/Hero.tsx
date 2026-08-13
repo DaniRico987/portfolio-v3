@@ -28,9 +28,9 @@ const itemVariants: Variants = {
 };
 
 export function Hero() {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const NAME = "Daniel Rico Palacio";
-  const heroHeading = language === "es" ? "Desarrollador Frontend" : "Frontend Developer";
+  const heroHeading = t.hero.role;
 
   return (
     <Section
@@ -60,14 +60,14 @@ export function Hero() {
           <motion.h1
             variants={itemVariants}
             aria-label={heroHeading}
-            className="text-4xl md:text-6xl font-bold text-neutral-400 mb-8 leading-tight"
+            className="text-sm md:text-base font-semibold uppercase tracking-[0.35em] text-neutral-400 mb-4"
           >
             {heroHeading}
           </motion.h1>
 
           <motion.h2
             variants={itemVariants}
-            className="text-6xl md:text-8xl font-bold tracking-tight text-white mb-6 leading-tight"
+            className="text-5xl md:text-8xl font-bold tracking-tight text-white mb-4 leading-tight"
           >
             {NAME.split(" ")[0]}{" "}
             <span className="text-gradient">
@@ -75,6 +75,12 @@ export function Hero() {
             </span>
           </motion.h2>
 
+          <motion.p
+            variants={itemVariants}
+            className="text-blue-400 font-medium text-base md:text-lg mb-8"
+          >
+            {t.hero.tagline}
+          </motion.p>
           <motion.p
             variants={itemVariants}
             className="text-neutral-400 text-lg md:text-xl leading-relaxed max-w-2xl mb-10 border-l-2 border-blue-500/30 pl-6"

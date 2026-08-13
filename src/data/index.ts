@@ -124,20 +124,21 @@ export const translations = {
       resume: "Resume",
     },
     hero: {
-      badge: "Hi, my name is",
+      badge: "Hi, I'm",
       role: "Software Developer",
-      tagline: "Building intuitive, high-performance web experiences.",
+      tagline:
+        "Designing software solutions with architecture, backend depth, and team coordination in mind.",
       about:
-        "Hello! 👋 I'm Daniel Rico Palacio, a passionate Web Developer from Colombia. My goal is to create unique and efficient digital experiences using technology.",
+        "Hello! 👋 I'm Daniel Rico Palacio, a software developer from Colombia focused on building scalable systems, integrating frontend and backend, and growing into a software architect and project leader.",
       cta_work: "View Work",
       cta_cv: "Download CV",
     },
     about: {
       title: "About Me",
       description: [
-        "My journey began with a high school passion project: attempting to build a video game. Getting lost in tutorials and lines of code, I realized I loved the process of creation and how fast time flew when I was programming. That spark led me to pursue Systems and Computing Engineering, where I found my true calling.",
-        "I pride myself on being a perfectionist with a plan. I don't just write code; I architect solutions. My experience has taught me that meticulous planning prevents poor performance. I believe software is a team sport—clean code and clear documentation are my standards because 'it works on my machine' isn't good enough for enterprise-grade applications.",
-        "Looking ahead, I'm steering my career toward the intersection of AI, App Development, and Neuromarketing. When I'm away from the keyboard, you'll find me trying to master the art of cooking or clearing my mind on a long walk.",
+        "My path started with a school project: trying to build a video game. That experience led me to Systems and Computing Engineering and, over time, to a broader view of software as a product, a system, and a team effort.",
+        "Today I work across frontend, backend, APIs, and data, but my focus is bigger than the stack itself. I care about architecture, maintainability, documentation, and decisions that help a team move faster without sacrificing quality.",
+        "My next step is to keep growing toward software architecture and project leadership, combining technical depth with the ability to align people, priorities, and delivery. Outside code, I enjoy cooking and long walks to reset my mind.",
       ],
       stats: {
         experience: "Years of Experience",
@@ -153,14 +154,14 @@ export const translations = {
           company: "NEXIFY S.A.S",
           period: "Oct 2024 - Mar 2025",
           description:
-            "Leading technical initiatives and full-stack development. Responsible for architectural decisions and ensuring data integrity with JSON and scalable backend solutions.",
+            "Led technical initiatives and full-stack development with a focus on architecture, data integrity, and scalable backend decisions. Helped guide implementation choices and team execution across the product.",
         },
         {
-          role: "Frontend Developer",
+          role: "Software Developer",
           company: "Universidad Tecnológica de Pereira",
           period: "Feb 2024 - Dec 2025",
           description:
-            "Focused on Front-End Development and User Experience (UX). Collaborating with cross-functional teams to deliver responsive and accessible web interfaces.",
+            "Built and maintained software solutions with cross-functional collaboration, spanning user interfaces, application logic, and delivery practices for responsive and accessible systems.",
         },
       ],
     },
@@ -190,7 +191,7 @@ export const translations = {
       ],
     },
     skills: {
-      title: "Technical Arsenal",
+      title: "Core Capabilities",
     },
     projects: {
       title: "Featured Projects",
@@ -207,7 +208,7 @@ export const translations = {
           title: "PaintTrack",
           status: "production",
           description:
-            "Web application for tracking painting projects. Demo Credentials: User: adminMaster | Pass: admin123",
+            "Web application for tracking painting projects, built with a clear data flow and a product mindset. Demo Credentials: User: adminMaster | Pass: admin123",
           tech: ["TypeScript", "React", "Vite"],
           github: "https://github.com/DaniRico987/painttrack",
           live: "https://painttrack-eight.vercel.app/",
@@ -216,7 +217,7 @@ export const translations = {
           title: "Sagittarius",
           status: "production",
           description:
-            "Real-time chat application with conversation management and instant messaging features.",
+            "Real-time chat application with conversation management, instant messaging, and backend-driven interaction patterns.",
           tech: ["TypeScript", "React", "Node.js", "SCSS"],
           github: "https://github.com/DaniRico987/sagittarius",
           live: "https://sagittarius-omega.vercel.app/",
@@ -225,7 +226,7 @@ export const translations = {
           title: "Product Management App",
           status: "project",
           description:
-            "Full-stack application for product management developed with Spring Boot (Backend) and Angular (Frontend).",
+            "Full-stack product management application designed with Spring Boot on the backend and Angular on the frontend, showing end-to-end architecture.",
           tech: ["Angular", "Spring Boot", "TypeScript", "Java"],
           github: "https://github.com/DaniRico987/SpringBoot---Angular",
           live: "#",
@@ -234,7 +235,7 @@ export const translations = {
           title: "CoffeeAura",
           status: "project",
           description:
-            "Project built to explore AI-assisted development by combining Lovable for design generation and Antigravity for implementation, while evaluating each step.",
+            "Project built to explore AI-assisted development, balancing design generation, implementation, and evaluation of the engineering process.",
           tech: ["TypeScript", "React", "Tailwind CSS"],
           github: "https://github.com/DaniRico987/coffeeAura",
           live: "https://coffee-aura.vercel.app/",
@@ -243,16 +244,16 @@ export const translations = {
           title: "Eolia",
           status: "recent",
           description:
-            "Concurrency and scheduling simulator for an Operating Systems course. Includes FIFO, Round Robin, SJF and priority scheduling, metrics, and a React + TypeScript UI with a Python backend.",
+            "Concurrency and scheduling simulator for an Operating Systems course, with algorithms, metrics, and a React + TypeScript UI paired with a Python backend.",
           tech: ["Python", "TypeScript", "React", "Vite"],
           github: "https://github.com/DaniRico987/eolia",
           live: "#",
         },
         {
           title: "Pitchme",
-          status: "recent",
+          status: "project",
           description:
-            "Upload your CV, paste the job offer, and find out what to improve to boost your chances. Work in progress.",
+            "Upload your CV, paste the job offer, and get improvement suggestions to boost your chances. Work in progress.",
           tech: ["TypeScript", "React", "Tailwind CSS"],
           github: "https://github.com/DaniRico987/pitchme",
           live: "https://pitchme-dr.vercel.app/",
@@ -260,11 +261,11 @@ export const translations = {
       ]),
     },
     contact: {
-      subtitle: "04. What's Next?",
-      title: "Get In Touch",
+      subtitle: "04. Let's Talk",
+      title: "Let's Build Something Useful",
       description:
-        "I'm currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
-      cta: "Say Hello",
+        "If you're looking for a software developer who can think in systems, own features end-to-end, or help shape technical direction, I'm open to talking. Send me a message and I'll reply as soon as I can.",
+      cta: "Email Me",
     },
     footer: {
       built: "Built with React & Tailwind V4",
@@ -281,21 +282,21 @@ export const translations = {
       resume: "Currículum",
     },
     hero: {
-      badge: "Hola, mi nombre es",
+      badge: "Hola, soy",
       role: "Desarrollador de Software",
       tagline:
-        "Construyendo experiencias web intuitivas y de alto rendimiento.",
+        "Diseñando soluciones de software con arquitectura, backend y coordinación de equipo en mente.",
       about:
-        "¡Hola! 👋 Soy Daniel Rico Palacio, un apasionado Desarrollador Web de Colombia. Mi objetivo es crear experiencias digitales únicas y eficientes utilizando tecnología.",
+        "¡Hola! 👋 Soy Daniel Rico Palacio, desarrollador de software en Colombia, enfocado en construir sistemas escalables, integrar frontend y backend, y crecer hacia arquitectura de software y liderazgo de proyectos.",
       cta_work: "Ver Trabajo",
       cta_cv: "Descargar CV",
     },
     about: {
       title: "Sobre Mí",
       description: [
-        "Todo comenzó en el colegio con un proyecto ambicioso: crear un videojuego. Entre tutoriales y código, descubrí que disfrutaba tanto el proceso de creación que perdía la noción del tiempo. Esa chispa me llevó a estudiar Ingeniería en Sistemas y Computación, donde formalicé mi pasión.",
-        "Me defino por mi autoaprendizaje y perfeccionismo; no avanzo hasta que el resultado es impecable. Mi experiencia me ha enseñado que una gran ejecución nace de una minuciosa planificación. Valoro profundamente la documentación y el código limpio, porque a nivel empresarial el software debe ser comprensible para todo el equipo, no solo para su autor.",
-        "Miro hacia el futuro con gran interés en la IA, el desarrollo de aplicaciones y el neuromarketing. Cuando no estoy programando, me encontrarás intentando dominar nuevas recetas en la cocina o despejando la mente con una buena caminata.",
+        "Todo comenzó con un proyecto escolar: intentar crear un videojuego. Esa experiencia me llevó a Ingeniería en Sistemas y Computación y, con el tiempo, a entender el software como producto, sistema y trabajo en equipo.",
+        "Hoy trabajo entre frontend, backend, APIs y datos, pero mi enfoque va más allá del stack. Me importan la arquitectura, la mantenibilidad, la documentación y las decisiones que ayudan a un equipo a avanzar rápido sin perder calidad.",
+        "Mi siguiente objetivo es seguir creciendo hacia la arquitectura de software y el liderazgo de proyectos, combinando profundidad técnica con la capacidad de alinear personas, prioridades y entregas. Fuera del código, disfruto cocinar y caminar para despejar la mente.",
       ],
       stats: {
         experience: "Años de Experiencia",
@@ -311,14 +312,14 @@ export const translations = {
           company: "NEXIFY S.A.S",
           period: "Oct 2024 - Mar 2025",
           description:
-            "Liderando iniciativas técnicas y desarrollo full-stack. Responsable de decisiones arquitectónicas y asegurar la integridad de datos con JSON y soluciones backend escalables.",
+            "Lideré iniciativas técnicas y desarrollo full-stack con foco en arquitectura, integridad de datos y decisiones backend escalables. Acompañé la toma de decisiones de implementación y la ejecución del equipo en el producto.",
         },
         {
-          role: "Desarrollador Frontend",
+          role: "Desarrollador de Software",
           company: "Universidad Tecnológica de Pereira",
           period: "Feb 2024 - Dic 2025",
           description:
-            "Enfocado en Desarrollo Front-End y Experiencia de Usuario (UX). Colaborando con equipos multidisciplinarios para entregar interfaces web responsivas y accesibles.",
+            "Construí y mantuve soluciones de software con colaboración transversal, abarcando interfaces, lógica de aplicación y prácticas de entrega para sistemas responsivos y accesibles.",
         },
       ],
     },
@@ -349,7 +350,7 @@ export const translations = {
     },
 
     skills: {
-      title: "Arsenal Técnico",
+      title: "Habilidades Clave",
     },
     projects: {
       title: "Proyectos Destacados",
@@ -366,7 +367,7 @@ export const translations = {
           title: "PaintTrack",
           status: "production",
           description:
-            "Aplicación web para seguimiento de proyectos de pintura. Credenciales Demo: Usuario: adminMaster | Clave: admin123",
+            "Aplicación web para seguimiento de proyectos de pintura, construida con un flujo de datos claro y mentalidad de producto. Credenciales Demo: Usuario: adminMaster | Clave: admin123",
           tech: ["TypeScript", "React", "Vite"],
           github: "https://github.com/DaniRico987/painttrack",
           live: "https://painttrack-eight.vercel.app/",
@@ -375,7 +376,7 @@ export const translations = {
           title: "Sagittarius",
           status: "production",
           description:
-            "Aplicación de chat en tiempo real con gestión de conversaciones y mensajería instantánea.",
+            "Aplicación de chat en tiempo real con gestión de conversaciones, mensajería instantánea y patrones de interacción apoyados en backend.",
           tech: ["TypeScript", "React", "Node.js", "SCSS"],
           github: "https://github.com/DaniRico987/sagittarius",
           live: "https://sagittarius-omega.vercel.app/",
@@ -384,7 +385,7 @@ export const translations = {
           title: "App de Gestión de Productos",
           status: "project",
           description:
-            "Aplicación full-stack para gestión de productos desarrollada con Spring Boot (Backend) y Angular (Frontend).",
+            "Aplicación full-stack para gestión de productos diseñada con Spring Boot en backend y Angular en frontend, mostrando arquitectura de punta a punta.",
           tech: ["Angular", "Spring Boot", "TypeScript", "Java"],
           github: "https://github.com/DaniRico987/SpringBoot---Angular",
           live: "#"
@@ -393,7 +394,7 @@ export const translations = {
           title: "CoffeeAura",
           status: "project",
           description:
-            "Proyecto creado con la idea de aprender qué se podía hacer al mezclar Lovable para el diseño, Antigravity para la construcción y evaluando cada paso del proceso.",
+            "Proyecto creado para explorar desarrollo asistido por IA, equilibrando generación de diseño, implementación y evaluación del proceso de ingeniería.",
           tech: ["TypeScript", "React", "Tailwind CSS"],
           github: "https://github.com/DaniRico987/coffeeAura",
           live: "https://coffee-aura.vercel.app/",
@@ -402,16 +403,16 @@ export const translations = {
           title: "Eolia",
           status: "recent",
           description:
-            "Simulador de planificación y concurrencia para Sistemas Operativos. Incluye FIFO, Round Robin, SJF y prioridad, métricas y UI en React + TypeScript con backend en Python.",
+            "Simulador de planificación y concurrencia para Sistemas Operativos, con algoritmos, métricas y una UI en React + TypeScript conectada a un backend en Python.",
           tech: ["Python", "TypeScript", "React", "Vite"],
           github: "https://github.com/DaniRico987/eolia",
           live: "#",
         },
         {
           title: "Pitchme",
-          status: "recent",
+          status: "project",
           description:
-            "Sube tu CV, pega la oferta y descubre qué mejorar para tener más chances. Proyecto en desarrollo continuo.",
+            "Sube tu CV, pega la oferta y recibe sugerencias para mejorar tus opciones. Proyecto en desarrollo continuo.",
           tech: ["TypeScript", "React", "Tailwind CSS"],
           github: "https://github.com/DaniRico987/pitchme",
           live: "https://pitchme-dr.vercel.app/",
@@ -419,11 +420,11 @@ export const translations = {
       ]),
     },
     contact: {
-      subtitle: "04. ¿Qué sigue?",
-      title: "Contáctame",
+      subtitle: "04. Hablemos",
+      title: "Construyamos Algo Útil",
       description:
-        "Actualmente estoy buscando nuevas oportunidades, mi bandeja de entrada siempre está abierta. Ya sea que tengas una pregunta o solo quieras saludar, ¡haré todo lo posible por responderte!",
-      cta: "Saludar",
+        "Si buscas un desarrollador de software que piense en sistemas, lleve funciones de principio a fin o ayude a definir la dirección técnica, estoy abierto a conversar. Escríbeme y te responderé lo antes posible.",
+      cta: "Escríbeme",
     },
     footer: {
       built: "Construido con React y Tailwind V4",

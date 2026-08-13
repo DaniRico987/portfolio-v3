@@ -15,15 +15,22 @@ export function StructuredData({ lang }: StructuredDataProps) {
         "@id": `${DOMAIN}/#person`,
         name: "Daniel Rico Palacio",
         url: DOMAIN,
-        jobTitle: lang === "es" ? "Desarrollador Frontend" : "Frontend Developer",
+        jobTitle:
+          lang === "es" ? "Desarrollador de Software" : "Software Developer",
         knowsAbout: [
+          "Software Architecture",
+          "System Design",
+          "Technical Leadership",
           "React",
           "TypeScript",
           "Vite",
           "TailwindCSS",
           "Framer Motion",
           "Node.js",
+          "NestJS",
+          "Spring Boot",
           "REST APIs",
+          "Project Management",
           "Git",
         ],
         address: {
