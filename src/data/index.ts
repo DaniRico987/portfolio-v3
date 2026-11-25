@@ -232,17 +232,17 @@ export const translations = {
           live: "#",
         },
         {
-          title: "CoffeeAura",
-          status: "project",
+          title: "zoo_ops",
+          status: "recent",
           description:
-            "Project built to explore AI-assisted development, balancing design generation, implementation, and evaluation of the engineering process.",
-          tech: ["TypeScript", "React", "Tailwind CSS"],
-          github: "https://github.com/DaniRico987/coffeeAura",
-          live: "https://coffee-aura.vercel.app/",
+            "Python simulation for zoo operations and incident response. Models task dependencies, resource reservations, reversible operations, and event history; currently validated through tests and console scenarios.",
+          tech: ["Python", "Pytest", "Hypothesis", "Domain Modeling"],
+          github: "https://github.com/DaniRico987/zoo_ops",
+          live: "#",
         },
         {
           title: "Eolia",
-          status: "recent",
+          status: "project",
           description:
             "Concurrency and scheduling simulator for an Operating Systems course, with algorithms, metrics, and a React + TypeScript UI paired with a Python backend.",
           tech: ["Python", "TypeScript", "React", "Vite"],
@@ -391,17 +391,17 @@ export const translations = {
           live: "#"
         },
         {
-          title: "CoffeeAura",
-          status: "project",
+          title: "zoo_ops",
+          status: "recent",
           description:
-            "Proyecto creado para explorar desarrollo asistido por IA, equilibrando generación de diseño, implementación y evaluación del proceso de ingeniería.",
-          tech: ["TypeScript", "React", "Tailwind CSS"],
-          github: "https://github.com/DaniRico987/coffeeAura",
-          live: "https://coffee-aura.vercel.app/",
+            "Simulación en Python para organizar operaciones de un zoológico y responder ante incidentes. Modela dependencias entre tareas, reservas de recursos, operaciones reversibles y trazabilidad mediante eventos; actualmente se valida con pruebas y escenarios en consola.",
+          tech: ["Python", "Pytest", "Hypothesis", "Modelado de dominio"],
+          github: "https://github.com/DaniRico987/zoo_ops",
+          live: "#",
         },
         {
           title: "Eolia",
-          status: "recent",
+          status: "project",
           description:
             "Simulador de planificación y concurrencia para Sistemas Operativos, con algoritmos, métricas y una UI en React + TypeScript conectada a un backend en Python.",
           tech: ["Python", "TypeScript", "React", "Vite"],
