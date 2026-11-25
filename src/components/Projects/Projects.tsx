@@ -148,33 +148,33 @@ export function Projects() {
                     transform: "rotateY(180deg)",
                   }}
                 >
-                  <div className="h-full p-6 flex flex-col">
-                    {/* Header */}
-                    <div className="mb-2">
-                      <h3 className="text-2xl font-bold text-white mb-3">
-                        {project.title}
-                      </h3>
-                      <p className="text-neutral-400 leading-relaxed text-sm">
-                        {project.description}
-                      </p>
-                    </div>
+                  <div className="h-full min-h-0 p-6 flex flex-col">
+                    <div className="min-h-0 flex-1 overflow-y-auto pr-1">
+                      <div className="mb-2">
+                        <h3 className="text-2xl font-bold text-white mb-3">
+                          {project.title}
+                        </h3>
+                        <p className="text-neutral-400 leading-relaxed text-sm">
+                          {project.description}
+                        </p>
+                      </div>
 
-                    {/* Tech Stack */}
-                    <div className="mb-auto">
-                      <div className="flex flex-wrap gap-2">
-                        {project.tech.map((tech, i) => (
-                          <span
-                            key={i}
-                            className="px-3 py-1.5 bg-blue-500/10 border border-blue-500/30 rounded-lg text-xs font-medium text-blue-400"
-                          >
-                            {tech}
-                          </span>
-                        ))}
+                      <div>
+                        <div className="flex flex-wrap gap-2">
+                          {project.tech.map((tech, i) => (
+                            <span
+                              key={i}
+                              className="px-3 py-1.5 bg-blue-500/10 border border-blue-500/30 rounded-lg text-xs font-medium text-blue-400"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="space-y-3 mt-6">
+                    <div className="shrink-0 space-y-3 pt-4">
                       <div className="flex gap-3">
                         <a
                           href={project.github}
