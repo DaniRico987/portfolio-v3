@@ -122,6 +122,8 @@ export const translations = {
       projects: "Projects",
       contact: "Contact",
       resume: "Resume",
+      menuOpen: "Open navigation menu",
+      menuClose: "Close navigation menu",
     },
     hero: {
       badge: "Hi, I'm",
@@ -280,6 +282,8 @@ export const translations = {
       projects: "Proyectos",
       contact: "Contacto",
       resume: "Currículum",
+      menuOpen: "Abrir menú de navegación",
+      menuClose: "Cerrar menú de navegación",
     },
     hero: {
       badge: "Hola, soy",

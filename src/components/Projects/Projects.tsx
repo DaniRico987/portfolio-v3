@@ -2,7 +2,7 @@ import { motion, type Variants } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 import { Section } from "../ui/Section";
 import { useLanguage } from "../../context/LanguageContext";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { ProjectStatus } from "../../data";
 
 const containerVariants: Variants = {
@@ -33,6 +33,8 @@ const gradients = [
 export function Projects() {
   const { t } = useLanguage();
   const [flipped, setFlipped] = useState<number[]>([]);
+  const frontCardButtons = useRef<Array<HTMLButtonElement | null>>([]);
+  const backButtons = useRef<Array<HTMLButtonElement | null>>([]);
 
   const statusLabels = {
     featured: t.projects.badgeFeatured,
@@ -53,11 +55,16 @@ export function Projects() {
   });
 
   const toggleFlip = (index: number) => {
-    if (flipped.includes(index)) {
-      setFlipped(flipped.filter((i) => i !== index));
-    } else {
-      setFlipped([...flipped, index]);
-    }
+    const isFlipped = flipped.includes(index);
+    setFlipped((current) =>
+      isFlipped ? current.filter((i) => i !== index) : [...current, index]
+    );
+    requestAnimationFrame(() => {
+      const target = isFlipped
+        ? frontCardButtons.current[index]
+        : backButtons.current[index];
+      target?.focus();
+    });
   };
 
   return (
@@ -78,7 +85,7 @@ export function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {sortedProjects.map((project, index) => (
             <motion.div
-              key={index}
+              key={project.title}
               variants={itemVariants}
               className="h-100 perspective-1000"
             >
@@ -95,51 +102,65 @@ export function Projects() {
               >
                 {/* Front Face */}
                 <div
-                  onClick={() => !flipped.includes(index) && toggleFlip(index)}
                   className={`absolute inset-0 backface-hidden rounded-xl overflow-hidden border border-neutral-800 hover:border-blue-500/50 transition-colors ${
                     flipped.includes(index)
                       ? "pointer-events-none"
                       : "cursor-pointer"
                   }`}
                   style={{ backfaceVisibility: "hidden" }}
+                  aria-hidden={flipped.includes(index)}
+                  inert={flipped.includes(index)}
                 >
-                  <div
-                    className={`h-full bg-linear-to-br ${
-                      gradients[index % gradients.length]
-                    } p-8 flex flex-col justify-between relative overflow-hidden`}
+                  <button
+                    ref={(element) => {
+                      frontCardButtons.current[index] = element;
+                    }}
+                    type="button"
+                    aria-label={`${project.title}: ${t.projects.viewDetails}`}
+                    aria-expanded={flipped.includes(index)}
+                    aria-controls={`project-details-${index}`}
+                    onClick={() => toggleFlip(index)}
+                    className="absolute inset-0 h-full w-full text-left focus-visible:ring-2 focus-visible:ring-blue-400"
                   >
-                    <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
+                    <div
+                      className={`h-full bg-linear-to-br ${
+                        gradients[index % gradients.length]
+                      } p-8 flex flex-col justify-between relative overflow-hidden`}
+                    >
+                      <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]" />
 
-                    <div className="relative z-10">
-                      <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white mb-4">
-                        {statusLabels[project.status]}
+                      <div className="relative z-10">
+                        <div className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white mb-4">
+                          {statusLabels[project.status]}
+                        </div>
+                        <h3 className="text-3xl font-bold text-white mb-2">
+                          {project.title}
+                        </h3>
                       </div>
-                      <h3 className="text-3xl font-bold text-white mb-2">
-                        {project.title}
-                      </h3>
+
+                      <div className="relative z-10 space-y-4">
+                        <div className="flex flex-wrap gap-2">
+                          {project.tech.slice(0, 3).map((tech, i) => (
+                            <span
+                              key={i}
+                              className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="text-white/80 text-sm">
+                          {t.projects.viewDetails} →
+                        </div>
+                      </div>
                     </div>
-
-                    <div className="relative z-10 space-y-4">
-                      <div className="flex flex-wrap gap-2">
-                        {project.tech.slice(0, 3).map((tech, i) => (
-                          <span
-                            key={i}
-                            className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-
-                      <div className="text-white/80 text-sm">
-                        {t.projects.viewDetails} →
-                      </div>
-                    </div>
-                  </div>
+                  </button>
                 </div>
 
                 {/* Back Face */}
                 <div
+                  id={`project-details-${index}`}
                   className={`absolute inset-0 backface-hidden rounded-xl overflow-hidden border border-neutral-800 bg-neutral-900 ${
                     !flipped.includes(index) ? "pointer-events-none" : ""
                   }`}
@@ -147,9 +168,16 @@ export function Projects() {
                     backfaceVisibility: "hidden",
                     transform: "rotateY(180deg)",
                   }}
+                  aria-hidden={!flipped.includes(index)}
+                  inert={!flipped.includes(index)}
                 >
                   <div className="h-full min-h-0 p-6 flex flex-col">
-                    <div className="min-h-0 flex-1 overflow-y-auto pr-1">
+                    <div
+                      role="region"
+                      aria-label={project.title}
+                      tabIndex={0}
+                      className="min-h-0 flex-1 overflow-y-auto pr-1 focus-visible:ring-2 focus-visible:ring-blue-400"
+                    >
                       <div className="mb-2">
                         <h3 className="text-2xl font-bold text-white mb-3">
                           {project.title}
@@ -181,9 +209,9 @@ export function Projects() {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 rounded-lg transition-colors text-sm font-medium"
+                          className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 rounded-lg transition-colors text-sm font-medium focus-visible:ring-2 focus-visible:ring-blue-400"
                         >
-                          <Github size={16} />
+                          <Github size={16} aria-hidden="true" />
                           {t.projects.code}
                         </a>
                         {project.live !== "#" && (
@@ -192,17 +220,22 @@ export function Projects() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors text-sm font-medium"
+                            className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors text-sm font-medium focus-visible:ring-2 focus-visible:ring-blue-400"
                           >
-                            <ExternalLink size={16} />
+                            <ExternalLink size={16} aria-hidden="true" />
                             {t.projects.live}
                           </a>
                         )}
                       </div>
 
                       <button
+                        ref={(element) => {
+                          backButtons.current[index] = element;
+                        }}
+                        type="button"
+                        aria-label={t.projects.flipBack}
                         onClick={() => toggleFlip(index)}
-                        className="w-full text-center text-neutral-500 hover:text-neutral-400 text-xs transition-colors py-2 cursor-pointer"
+                        className="w-full text-center text-neutral-500 hover:text-neutral-400 text-xs transition-colors py-2 cursor-pointer focus-visible:ring-2 focus-visible:ring-blue-400"
                       >
                         {t.projects.flipBack} →
                       </button>

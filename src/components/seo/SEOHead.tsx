@@ -13,16 +13,16 @@ const FULL_NAME = "Daniel Rico Palacio";
 
 const meta = {
   es: {
-    title: `${FULL_NAME} | Desarrollador de Software · Arquitectura · Liderazgo`,
+    title: `${FULL_NAME} | Desarrollador de Software · Arquitectura · Liderazgo Técnico`,
     description:
-      "Desarrollador de software colombiano enfocado en arquitectura de soluciones, desarrollo full-stack, APIs y liderazgo técnico. Disponible para proyectos y colaboración desde Risaralda, Colombia.",
+      "Desarrollador de software colombiano enfocado en arquitectura de soluciones, sistemas full-stack y liderazgo técnico. Disponible para proyectos y colaboración desde Risaralda, Colombia.",
     ogLocale: "es_CO",
     ogImage: `${DOMAIN}/og-image-es.png`,
   },
   en: {
-    title: `${FULL_NAME} | Software Developer · Architecture · Leadership`,
+    title: `${FULL_NAME} | Software Developer · Architecture · Technical Leadership`,
     description:
-      "Colombian software developer focused on solution architecture, full-stack development, APIs, and technical leadership. Available for projects and collaboration from Risaralda, Colombia.",
+      "Colombian software developer focused on solution architecture, full-stack systems, and technical leadership. Available for projects and collaboration from Risaralda, Colombia.",
     ogLocale: "en_US",
     ogImage: `${DOMAIN}/og-image-en.png`,
   },
@@ -62,8 +62,3 @@ export function SEOHead({
     </Helmet>
   );
 }
-
-// TODO: Crear public/og-image-es.png y public/og-image-en.png
-// Dimensiones requeridas: 1200×630 px
-// Texto sugerido ES: "Daniel Rico Palacio · Desarrollador de Software"
-// Texto sugerido EN: "Daniel Rico Palacio · Software Developer"

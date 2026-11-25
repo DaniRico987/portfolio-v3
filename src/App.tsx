@@ -1,3 +1,4 @@
+import { MotionConfig } from "framer-motion";
 import { HelmetProvider } from "react-helmet-async";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Navbar } from "./components/layout/Navbar";
@@ -38,30 +39,42 @@ interface AppShellProps {
 function AppShell({ lang }: AppShellProps) {
   return (
     <LanguageProvider initialLang={lang}>
-      <div className="min-h-screen bg-neutral-950 text-neutral-50 font-sans selection:bg-blue-500/30 relative">
-        <ParticleBackground />
-        <ScrollProgress />
-        <ScrollToTop />
-        <SEOHead lang={lang} pagePath="" />
-        <StructuredData lang={lang} />
+      <MotionConfig reducedMotion="user">
+        <div className="min-h-screen bg-neutral-950 text-neutral-50 font-sans selection:bg-blue-500/30 relative">
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-3 focus:text-neutral-950 focus-visible:ring-2 focus-visible:ring-blue-500"
+          >
+            {lang === "es" ? "Saltar al contenido" : "Skip to content"}
+          </a>
+          <ParticleBackground />
+          <ScrollProgress />
+          <ScrollToTop />
+          <SEOHead lang={lang} pagePath="" />
+          <StructuredData lang={lang} />
 
-        <header className="relative z-30">
-          <Navbar />
-        </header>
+          <header className="relative z-30">
+            <Navbar />
+          </header>
 
-        <main className="flex flex-col relative z-10">
-          <Hero />
-          <TechMarquee />
-          <About />
-          <Experience />
-          <Education />
-          <Skills />
-          <Projects />
-          <Contact />
-        </main>
+          <main
+            id="main-content"
+            tabIndex={-1}
+            className="flex flex-col relative z-10"
+          >
+            <Hero />
+            <TechMarquee />
+            <About />
+            <Experience />
+            <Education />
+            <Skills />
+            <Projects />
+            <Contact />
+          </main>
 
-        <Footer />
-      </div>
+          <Footer />
+        </div>
+      </MotionConfig>
     </LanguageProvider>
   );
 }

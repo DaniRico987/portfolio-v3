@@ -1,76 +1,77 @@
-/// <reference types="node" />
 import fs from "fs";
 import path from "path";
-import { spawn, type ChildProcess } from "node:child_process";
 
-const PREVIEW_URL = "http://localhost:4173";
-const ROUTES = ["/es", "/en"] as const;
+const DOMAIN = "https://danielrico.vercel.app";
+const ROUTES = [
+  {
+    path: "es",
+    language: "es",
+    title: "Desarrollador de Software",
+    jobTitle: "Desarrollador de Software",
+    descriptionStartsWith: "Desarrollador de software",
+    projectsHeading: "Proyectos Destacados",
+  },
+  {
+    path: "en",
+    language: "en",
+    title: "Software Developer",
+    jobTitle: "Software Developer",
+    descriptionStartsWith: "Colombian software developer",
+    projectsHeading: "Featured Projects",
+  },
+] as const;
 
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-async function waitForServer(url: string, retries = 60) {
-  for (let attempt = 0; attempt < retries; attempt += 1) {
-    try {
-      const response = await fetch(url);
-      if (response.ok) {
-        return;
-      }
-    } catch {
-      // Ignore network errors until server boots.
-    }
-
-    await sleep(500);
+for (const route of ROUTES) {
+  const htmlPath = path.join(process.cwd(), "dist", route.path, "index.html");
+  if (!fs.existsSync(htmlPath)) {
+    throw new Error(`No se generó el HTML prerenderizado para /${route.path}.`);
   }
 
-  throw new Error("No se pudo iniciar vite preview en el tiempo esperado.");
-}
+  const html = fs.readFileSync(htmlPath, "utf-8");
+  const canonical = `${DOMAIN}/${route.path}`;
+  const titleMatches = html.match(/<title>[^<]*<\/title>/g) ?? [];
+  const canonicalMatches = html.match(/rel="canonical"/g) ?? [];
+  const alternateLinks = html.match(/<link[^>]*rel="alternate"[^>]*>/g) ?? [];
+  const structuredDataMatches =
+    html.match(/type="application\/ld\+json"/g) ?? [];
+  const description = html.match(
+    /<meta name="description" content="([^"]+)"/
+  )?.[1];
+  const structuredData = html.match(
+    /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/
+  )?.[1];
+  const graph = structuredData
+    ? (JSON.parse(structuredData) as {
+        "@graph"?: Array<{
+          "@type"?: string;
+          jobTitle?: string;
+        }>;
+      })
+    : undefined;
+  const person = graph?.["@graph"]?.find((item) => item["@type"] === "Person");
+  const title = titleMatches[0]?.replace("<title>", "").replace("</title>", "");
 
-function startPreview(): ChildProcess {
-  return spawn("npm run preview -- --host localhost --port 4173", {
-    cwd: process.cwd(),
-    shell: true,
-    stdio: "pipe",
-  });
-}
-
-function stopPreview(processRef: ChildProcess) {
-  if (!processRef.killed) {
-    processRef.kill("SIGTERM");
+  if (
+    !html.includes(`<html lang="${route.language}"`) ||
+    !titleMatches.some((title) => title.includes(route.title)) ||
+    !description?.startsWith(route.descriptionStartsWith) ||
+    !html.includes(`href="${canonical}"`) ||
+    canonicalMatches.length !== 1 ||
+    !alternateLinks.some(
+      (link) => link.includes('hreflang="es"') && link.includes(`${DOMAIN}/es`)
+    ) ||
+    !alternateLinks.some(
+      (link) => link.includes('hreflang="en"') && link.includes(`${DOMAIN}/en`)
+    ) ||
+    !html.includes(`property="og:title" content="${title}"`) ||
+    !html.includes(route.projectsHeading) ||
+    structuredDataMatches.length !== 1 ||
+    person?.jobTitle !== route.jobTitle
+  ) {
+    throw new Error(
+      `El HTML de /${route.path} no contiene contenido localizado y metadatos completos.`
+    );
   }
 }
 
-async function prerender() {
-  const previewProcess = startPreview();
-
-  previewProcess.stdout?.on("data", () => {
-    // Keep stdout consumed so process buffers do not block.
-  });
-
-  previewProcess.stderr?.on("data", () => {
-    // Keep stderr consumed so process buffers do not block.
-  });
-
-  try {
-    await waitForServer(`${PREVIEW_URL}/es`);
-
-    for (const route of ROUTES) {
-      const response = await fetch(`${PREVIEW_URL}${route}`);
-      if (!response.ok) {
-        throw new Error(`Fallo al obtener ${route}: ${response.status}`);
-      }
-
-      const html = await response.text();
-      const outputDir = path.join(process.cwd(), "dist", route.slice(1));
-      fs.mkdirSync(outputDir, { recursive: true });
-      fs.writeFileSync(path.join(outputDir, "index.html"), html, "utf-8");
-    }
-
-    console.log("✓ Prerender completado — /es /en");
-  } finally {
-    stopPreview(previewProcess);
-  }
-}
-
-await prerender();
+console.log("✓ HTML localizado y metadatos verificados — /es /en");

@@ -57,23 +57,22 @@ export function Hero() {
             </div>
           </motion.div>
 
-          <motion.h1
+          <motion.p
             variants={itemVariants}
-            aria-label={heroHeading}
             className="text-sm md:text-base font-semibold uppercase tracking-[0.35em] text-neutral-400 mb-4"
           >
             {heroHeading}
-          </motion.h1>
+          </motion.p>
 
-          <motion.h2
+          <motion.h1
             variants={itemVariants}
-            className="text-5xl md:text-8xl font-bold tracking-tight text-white mb-4 leading-tight"
+            className="text-5xl md:text-8xl font-bold tracking-tight text-white mb-4 leading-tight text-balance"
           >
             {NAME.split(" ")[0]}{" "}
             <span className="text-gradient">
               {NAME.split(" ")[1] + " " + NAME.split(" ")[2]}
             </span>
-          </motion.h2>
+          </motion.h1>
 
           <motion.p
             variants={itemVariants}
@@ -96,11 +95,12 @@ export function Hero() {
               href="#projects"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-neutral-950 font-bold rounded-lg hover:bg-blue-50 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)]"
+              className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-neutral-950 font-bold rounded-lg hover:bg-blue-50 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] focus-visible:ring-2 focus-visible:ring-blue-400"
             >
               {t.hero.cta_work}{" "}
               <ArrowRight
                 size={18}
+                aria-hidden="true"
                 className="group-hover:translate-x-1 transition-transform"
               />
             </motion.a>
@@ -108,11 +108,12 @@ export function Hero() {
               href="/resume.pdf"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent text-white border border-neutral-700 font-medium rounded-lg hover:border-blue-500/50 hover:bg-blue-500/5 transition-colors"
+              className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent text-white border border-neutral-700 font-medium rounded-lg hover:border-blue-500/50 hover:bg-blue-500/5 transition-colors focus-visible:ring-2 focus-visible:ring-blue-400"
             >
               {t.hero.cta_cv}{" "}
               <Download
                 size={18}
+                aria-hidden="true"
                 className="group-hover:translate-y-1 transition-transform"
               />
             </motion.a>

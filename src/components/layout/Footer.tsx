@@ -14,9 +14,10 @@ export function Footer() {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-neutral-500 hover:text-blue-500 transition-colors transform hover:-translate-y-1"
+            className="text-neutral-500 hover:text-blue-500 transition-colors transform hover:-translate-y-1 focus-visible:ring-2 focus-visible:ring-blue-400"
           >
-            <link.icon size={20} />
+            <link.icon size={20} aria-hidden="true" />
+            <span className="sr-only">{link.label}</span>
           </a>
         ))}
       </div>

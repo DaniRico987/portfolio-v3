@@ -27,7 +27,7 @@ export function Contact() {
           href="https://mail.google.com/mail/?view=cm&fs=1&to=danielrico2007@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-10 py-5 bg-transparent border border-blue-500 text-blue-500 font-medium rounded-lg hover:bg-blue-500/10 transition-all hover:-translate-y-1 text-lg"
+          className="inline-block px-10 py-5 bg-transparent border border-blue-500 text-blue-500 font-medium rounded-lg hover:bg-blue-500/10 transition-[color,background-color,border-color,transform] hover:-translate-y-1 text-lg focus-visible:ring-2 focus-visible:ring-blue-400"
         >
           {t.contact.cta}
         </a>
